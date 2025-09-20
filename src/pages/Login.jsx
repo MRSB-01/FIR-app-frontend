@@ -44,7 +44,7 @@ const Login = () => {
   const fetchCaptcha = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8080/api/auth/captcha-text"
+        "https://fir-app-backend-1.onrender.com/api/auth/captcha-text"
       );
       setCaptchaText(res.data.captchaText); // Store the correct captcha text
       setFormData((prev) => ({ ...prev, captcha: "" })); // Clear previous captcha input
@@ -129,7 +129,7 @@ const Login = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await axios.post("http://localhost:8080/api/auth/login", {
+      const res = await axios.post("https://fir-app-backend-1.onrender.com/api/auth/login", {
         email: formData.email,
         password: formData.password,
         captcha: formData.captcha,

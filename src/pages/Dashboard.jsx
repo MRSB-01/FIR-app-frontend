@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   const fetchUserData = async (token) => {
     try {
-      const res = await axios.get("http://localhost:8080/api/auth/user", {
+      const res = await axios.get("https://fir-app-backend-1.onrender.com/api/auth/user", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(res.data);

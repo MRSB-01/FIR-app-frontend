@@ -172,7 +172,7 @@ const Register = () => {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/auth/register",
+        "https://fir-app-backend-1.onrender.com/api/auth/register",
         formDataToSend,
         {
           headers: {

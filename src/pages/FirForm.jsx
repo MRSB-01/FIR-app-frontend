@@ -58,7 +58,7 @@ const FirForm = () => {
 
   const fetchFir = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/fir/${id}`, {
+      const res = await axios.get(`https://fir-app-backend-1.onrender.com/api/fir/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setFormData(res.data);
@@ -207,12 +207,12 @@ const FirForm = () => {
 
     try {
       if (id) {
-        await axios.put(`http://localhost:8080/api/fir/${id}`, formData, {
+        await axios.put(`https://fir-app-backend-1.onrender.com/api/fir/${id}`, formData, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         toast.success("FIR updated successfully");
       } else {
-        await axios.post("http://localhost:8080/api/fir", formData, {
+        await axios.post("https://fir-app-backend-1.onrender.com/api/fir", formData, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         toast.success("FIR created successfully");

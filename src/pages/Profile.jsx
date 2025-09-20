@@ -35,7 +35,7 @@ const Profile = () => {
     const loadProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:8080/api/auth/profile", {
+        const res = await axios.get("https://fir-app-backend-1.onrender.com/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (isMounted) {
@@ -102,7 +102,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        "http://localhost:8080/api/auth/profile",
+        "https://fir-app-backend-1.onrender.com/api/auth/profile",
         formDataToSend,
         {
           headers: {
@@ -122,7 +122,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:8080/api/auth/profile", {
+      const res = await axios.get("https://fir-app-backend-1.onrender.com/api/auth/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(res.data);
